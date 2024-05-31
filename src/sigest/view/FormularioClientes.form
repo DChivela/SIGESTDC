@@ -315,6 +315,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnPesquisar">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/sigest/imagens/Pesquisar_4.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Pesquisar"/>
                   </Properties>
                   <Events>
@@ -476,7 +479,7 @@
                           <Component id="txtPesquisaNome" min="-2" pref="145" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                           <Component id="btnPesquisaNome" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="429" max="32767" attributes="0"/>
+                          <EmptySpace pref="409" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jScrollPane1" min="-2" pref="760" max="-2" attributes="0"/>
@@ -514,6 +517,9 @@
                 </Component>
                 <Component class="javax.swing.JButton" name="btnPesquisaNome">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/sigest/imagens/Pesquisar_4.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Pesquisar"/>
                   </Properties>
                   <Events>
@@ -638,7 +644,7 @@
         <Component class="javax.swing.JButton" name="btnNovo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sigest/imagens/add1.png"/>
+              <Image iconType="3" name="/sigest/imagens/Novo_2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="NOVO"/>
           </Properties>
@@ -649,7 +655,7 @@
         <Component class="javax.swing.JButton" name="btnSalvar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sigest/imagens/salvar.png"/>
+              <Image iconType="3" name="/sigest/imagens/Save_1.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SALVAR"/>
           </Properties>
@@ -660,7 +666,7 @@
         <Component class="javax.swing.JButton" name="btnEditar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sigest/imagens/editar.png"/>
+              <Image iconType="3" name="/sigest/imagens/Edite_2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="EDITAR"/>
           </Properties>
@@ -682,7 +688,7 @@
         <Component class="javax.swing.JButton" name="btnImprimir">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sigest/imagens/printer.png"/>
+              <Image iconType="3" name="/sigest/imagens/Printer_2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="IMPRIMIR"/>
           </Properties>
