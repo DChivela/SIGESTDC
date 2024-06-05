@@ -11,4 +11,8 @@ package sigest.model;
  */
 public class Fornecedores extends Clientes {
     
+    /*Override*/
+            public String toString(){
+                return this.getNome();
+            }
 }

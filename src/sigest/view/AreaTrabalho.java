@@ -31,7 +31,7 @@ public class AreaTrabalho extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ImageIcon icon = new ImageIcon(getClass().getResource("/imgFundo/fundo.jpg"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/imgFundo/FundoAzulTapiz.png"));
         Image image = icon.getImage();
         painelDesktop = new javax.swing.JDesktopPane(){
             public void paintComponent(Graphics d){
@@ -69,7 +69,7 @@ public class AreaTrabalho extends javax.swing.JFrame {
         painelDesktop.setLayout(painelDesktopLayout);
         painelDesktopLayout.setHorizontalGroup(
             painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 675, Short.MAX_VALUE)
         );
         painelDesktopLayout.setVerticalGroup(
             painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
