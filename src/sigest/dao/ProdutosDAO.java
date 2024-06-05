@@ -50,47 +50,37 @@ public class ProdutosDAO {
        }
    }
    
-      public void Editar(Clientes obj){
+      public void Editar(Produtos obj){
        try {
            //1º Criar o SQL
-           String sql = "update tb_clientes set nome=?, bi=?, nif=?, email=?, telefone=?, telefone2=?, codPostal=?, provincia=?,"
-                   +"numero=?, complemento=?, bairro=?, cidade=?, pais=? where id=?";
+           String sql = "update tb_produtos set descricao=?, preco=?, qtd_stock=?, for_id=? where id=?";
            //2ºPreparar a conexão SQL para se conectar com o Banco
            PreparedStatement stmt = conn.prepareStatement(sql);
-           stmt.setString(1,obj.getNome());
-           stmt.setString(2,obj.getBi());
-           stmt.setString(3,obj.getNif());
-           stmt.setString(4,obj.getEmail());
-           stmt.setString(5,obj.getTelefone());
-           stmt.setString(6,obj.getTelefone2());
-           stmt.setString(7,obj.getCodPostal());
-           stmt.setString(8,obj.getProvincia());
-           stmt.setInt(9,obj.getNumero());
-           stmt.setString(10,obj.getComplemento());
-           stmt.setString(11,obj.getBairro());
-           stmt.setString(12,obj.getCidade());
-           stmt.setString(13,obj.getPais());
-           stmt.setInt(14,obj.getId());
+           stmt.setString(1,obj.getDescricao());
+           stmt.setDouble(2,obj.getPreco());
+           stmt.setInt(3,obj.getStock());
+           stmt.setInt(4,obj.getFornecedor().getId());
+           stmt.setInt(5,obj.getId());
            //3ºExecutar 
            stmt.execute();
            //4ºFechar conexão
            stmt.close();
-           JOptionPane.showMessageDialog(null, "Cliente editado com sucesso!");
+           JOptionPane.showMessageDialog(null, "Produto editado com sucesso!");
        } catch (SQLException e) {
-           JOptionPane.showMessageDialog(null, "Erro ao editar o cliente"+e);
+           JOptionPane.showMessageDialog(null, "Erro ao editar o produto"+e);
        }
    }
       
-      public void Excluir(Clientes obj){
+      public void Excluir(Produtos obj){
           try {
-              String sql = "delete from tb_clientes where id=?";
+              String sql = "delete from tb_produtos where id=?";
               PreparedStatement stmt = conn.prepareStatement(sql);
               stmt.setInt(1, obj.getId());
               stmt.execute();
               stmt.close();
-              JOptionPane.showMessageDialog(null, "Cliente exluido com sucesso!");
+              JOptionPane.showMessageDialog(null, "Produto exluido com sucesso!");
           } catch (SQLException e) {
-              JOptionPane.showMessageDialog(null,"Erro ao excluir o cliente"+e);
+              JOptionPane.showMessageDialog(null,"Erro ao excluir o produto"+e);
           }
       }
    

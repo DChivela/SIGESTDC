@@ -161,6 +161,11 @@ public class FormularioProdutos extends javax.swing.JFrame {
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
         });
+        cbFornecedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbFornecedorMouseClicked(evt);
+            }
+        });
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("Fornecedor");
@@ -466,7 +471,7 @@ public class FormularioProdutos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisarActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        // Parte priorizada antes ser executada qualquer coisa no código.
+        // Parte priorizada antes de ser executada qualquer coisa no código.
         listar();
     }//GEN-LAST:event_formWindowActivated
 
@@ -520,25 +525,28 @@ public class FormularioProdutos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDescricaoKeyPressed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        Clientes obj = new Clientes();
-        obj.setNome(txtDescricao.getText());
-        obj.setEmail(txtPreco.getText());
-        obj.setNumero(Integer.valueOf(txtStock.getText()));
-        obj.setPais(cbFornecedor.getSelectedItem().toString());
+        Produtos obj = new Produtos();
         obj.setId(Integer.valueOf(txtCodigo.getText()));
+        obj.setDescricao(txtDescricao.getText());
+        obj.setPreco(Double.valueOf(txtPreco.getText()));
+        obj.setStock(Integer.valueOf(txtStock.getText()));
         
-        ClientesDAO dao = new ClientesDAO();
-        dao.Editar(obj);
+        Fornecedores f = new Fornecedores();
+        f = (Fornecedores) cbFornecedor.getSelectedItem();
+                obj.setFornecedor(f);
+        
+        ProdutosDAO daop = new ProdutosDAO();
+        daop.Editar(obj);
         Utilitarios util = new Utilitarios();
         util.LimpaTela(painelDadosPessoais);
       
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
-        Clientes obj = new Clientes();
+        Produtos obj = new Produtos();
         obj.setId(Integer.valueOf(txtCodigo.getText()));
-        ClientesDAO dao = new ClientesDAO();
-        dao.Excluir(obj);
+        ProdutosDAO daop = new ProdutosDAO();
+        daop.Excluir(obj);
         Utilitarios util = new Utilitarios();
         util.LimpaTela(painelDadosPessoais );
     }//GEN-LAST:event_btnExcluirActionPerformed
@@ -547,9 +555,14 @@ public class FormularioProdutos extends javax.swing.JFrame {
         Painel_Guias.setSelectedIndex(0);
         txtCodigo.setText(tabela.getValueAt(tabela.getSelectedRow(), 0).toString());
         txtDescricao.setText(tabela.getValueAt(tabela.getSelectedRow(), 1).toString());
-        txtPreco.setText(tabela.getValueAt(tabela.getSelectedRow(), 4).toString());
-        txtStock.setText(tabela.getValueAt(tabela.getSelectedRow(), 9).toString());
-        cbFornecedor.setSelectedItem(tabela.getValueAt(tabela.getSelectedRow(), 13).toString());
+        txtPreco.setText(tabela.getValueAt(tabela.getSelectedRow(), 2).toString());
+        txtStock.setText(tabela.getValueAt(tabela.getSelectedRow(), 3).toString());
+
+        Fornecedores f = new Fornecedores();
+        FornecedoresDAO daof = new FornecedoresDAO();
+        f = daof.BuscarFornecedores(tabela.getValueAt(tabela.getSelectedRow(),4).toString());
+        cbFornecedor.removeAllItems();
+        cbFornecedor.getModel().setSelectedItem(f);
     }//GEN-LAST:event_tabelaMouseClicked
 
     private void txtPesquisaDescricaoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisaDescricaoKeyReleased
@@ -581,13 +594,17 @@ public class FormularioProdutos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPesquisaDescricaoKeyReleased
 
     private void cbFornecedorAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_cbFornecedorAncestorAdded
+
+    }//GEN-LAST:event_cbFornecedorAncestorAdded
+
+    private void cbFornecedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbFornecedorMouseClicked
         FornecedoresDAO dao = new FornecedoresDAO();
         List<Fornecedores> lista = dao.Listar();
         cbFornecedor.removeAllItems();
         for(Fornecedores f : lista){
             cbFornecedor.addItem(f);
         }
-    }//GEN-LAST:event_cbFornecedorAncestorAdded
+    }//GEN-LAST:event_cbFornecedorMouseClicked
 
     /**
      * @param args the command line arguments
