@@ -234,5 +234,20 @@ public void efectuarLogin(String email, String senha){
     }
 }
 
+public void AdicionarStock(int StockNovo, int id){
+    try {
+        String sql = "update tb_produtos set qtd_stock=? where id=?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, StockNovo);
+        stmt.setInt(2, id);
+        stmt.execute();
+        stmt.close();
+        JOptionPane.showMessageDialog(null, "Adicionado com sucesso");
+        
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Erro ao adicionar ao stock"+e);
+    }
+}
+
 }
 

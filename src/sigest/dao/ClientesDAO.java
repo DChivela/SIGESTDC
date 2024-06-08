@@ -130,6 +130,38 @@ public class ClientesDAO {
        }
        return null;
     }
+   
+   public Clientes BuscarClienteNIF(String Nif){
+       try {
+           String sql = "select * from tb_clientes where Nif = ?";
+           PreparedStatement stmt = conn.prepareStatement(sql);
+           stmt.setString(1, Nif);
+           ResultSet rs = stmt.executeQuery();
+           Clientes obj = new Clientes();
+           if(rs.next()){
+               obj.setId(rs.getInt("id"));
+               obj.setNome(rs.getString("Nome"));
+               obj.setBi(rs.getString("Bi"));
+               obj.setNif(rs.getString("Nif"));
+               obj.setEmail(rs.getString("Email"));
+               obj.setTelefone(rs.getString("Telefone"));
+               obj.setTelefone2(rs.getString("Telefone2"));
+               obj.setCodPostal(rs.getString("codPostal"));
+               obj.setProvincia(rs.getString("Provincia"));
+               obj.setNumero(rs.getInt("numero"));
+               obj.setComplemento(rs.getString("Complemento"));
+               obj.setBairro(rs.getString("Bairro"));
+               obj.setCidade(rs.getString("Cidade"));
+               obj.setPais(rs.getString("Pais"));  
+           }//Fechamento do preechimento automático
+           return obj; //Retornar o objecto Cliente após a busca
+           
+       } catch (SQLException erro) { //Caso alguma coisa deia errado
+           JOptionPane.showMessageDialog(null, "Erro ao buscar o cliente"+ erro);
+       }
+       return null;
+    }
+   
    //Método para listar os clientes do Banco
    public List<Clientes>Listar(){
        List<Clientes> lista = new ArrayList<>();

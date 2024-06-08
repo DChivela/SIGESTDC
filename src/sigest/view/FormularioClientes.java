@@ -678,8 +678,8 @@ public class FormularioClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisaNomeActionPerformed
 
     private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
-                   String nome = txtNome.getText();
+       if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+       String nome = txtNome.getText();
        Clientes obj = new Clientes();
        ClientesDAO dao = new ClientesDAO();
        

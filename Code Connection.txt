@@ -1,0 +1,29 @@
+public class TestarConexao {
+    
+    public static void main(String [] args){
+        try {
+            new ConexaoBanco().pegarConexao();
+            JOptionPane.showMessageDialog(null, "Conectado com sucesso ao banco de dados");
+        } catch (Exception erro) {
+            JOptionPane.showMessageDialog(null, "Erro ao conectar com o banco de dados"+ erro.getMessage());
+        }
+    }
+}
+
+============================================================
+============================================================
+
+public class ConexaoBanco {
+    final private String url = "jdbc:mysql://localhost/sigest";
+    final private String usuario = "root";
+    final private String senha = "";
+
+    public Connection pegarConexao(){
+        try {
+            return DriverManager.getConnection(url,usuario,senha);
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Erro ao conectar o banco de dados");
+        }
+        return null;
+    }
+}

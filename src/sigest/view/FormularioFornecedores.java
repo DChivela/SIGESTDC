@@ -214,7 +214,7 @@ public class FormularioFornecedores extends javax.swing.JFrame {
 
         jLabel11.setText("Bairro");
 
-        cbPais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AN", "BR", "NG", "PT", " " }));
+        cbPais.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AN", "BR", "NG", "PT", "USA", " " }));
 
         jLabel12.setText("País");
 

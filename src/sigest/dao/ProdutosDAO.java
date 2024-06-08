@@ -139,30 +139,24 @@ public class ProdutosDAO {
        }
        return null;
    }
-      public List<Clientes>Filtrar(String nome){
-       List<Clientes> lista = new ArrayList<>();
+      public List<Produtos>Filtrar(String nome){
+       List<Produtos> lista = new ArrayList<>();
        try {
-           String sql = "Select * from tb_clientes where nome like ?";
+           String sql = "Select p.id, p.descricao, p.preco, p.qtd_stock, f.nome from tb_Produtos as p inner join "
+                   + "tb_fornecedores as f on(p.for_id = f.id) where p.descricao like ?";
            PreparedStatement stmt = conn.prepareStatement(sql);
            stmt.setString(1, nome);
            ResultSet rs = stmt.executeQuery();
            
            while(rs.next()){
-               Clientes obj = new Clientes();
+               Produtos obj = new Produtos();
+               Fornecedores f = new Fornecedores();
                obj.setId(rs.getInt("id"));
-               obj.setNome(rs.getString("Nome"));
-               obj.setBi(rs.getString("Bi"));
-               obj.setNif(rs.getString("Nif"));
-               obj.setEmail(rs.getString("Email"));
-               obj.setTelefone(rs.getString("Telefone"));
-               obj.setTelefone2(rs.getString("Telefone2"));
-               obj.setCodPostal(rs.getString("codPostal"));
-               obj.setProvincia(rs.getString("Provincia"));
-               obj.setNumero(rs.getInt("numero"));
-               obj.setComplemento(rs.getString("Complemento"));
-               obj.setBairro(rs.getString("Bairro"));
-               obj.setCidade(rs.getString("Cidade"));
-               obj.setPais(rs.getString("Pais")); 
+               obj.setDescricao(rs.getString("descricao"));
+               obj.setPreco(rs.getDouble("preco"));
+               obj.setStock(rs.getInt("qtd_stock"));
+               f.setNome(rs.getString("f.nome"));
+               obj.setFornecedor(f);
                lista.add(obj);//A variável lista servirá para adicionar o obj dentro da lista criada.
            }
            return lista; //Retorno do que estiver dentro da lista.
@@ -173,5 +167,33 @@ public class ProdutosDAO {
    }
 
 
+      public void adicionarStock(int id, int StockNovo){
+          try {
+              String sql = "update tb_produtos set qtd_stock=? where id=?";
+              PreparedStatement stmt = conn.prepareStatement(sql);
+              stmt.setInt(1, StockNovo);
+              stmt.setInt(2, id);
+              stmt.execute();
+              stmt.close();
+              JOptionPane.showMessageDialog(null, "Nova quantidade adicionada ao stock!");
+          } catch (Exception e) {
+              JOptionPane.showMessageDialog(null, "Erro ao adicionar ao stock"+e);
+          }
+      }
+      
+            public void baixarStock(int id, int StockNovo){
+          try {
+              String sql = "update tb_produtos set qtd_stock=? where id=?";
+              PreparedStatement stmt = conn.prepareStatement(sql);
+              stmt.setInt(1, StockNovo);
+              stmt.setInt(2, id);
+              stmt.execute();
+              stmt.close();
+              JOptionPane.showMessageDialog(null, "Baixa no stock efectuada com sucesso!");
+          } catch (Exception e) {
+              JOptionPane.showMessageDialog(null, "Erro na baixa do stock");
+          }
+      }
+      
 }
 
