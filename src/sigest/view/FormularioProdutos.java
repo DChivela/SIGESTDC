@@ -487,20 +487,24 @@ public class FormularioProdutos extends javax.swing.JFrame {
     }//GEN-LAST:event_btnPesquisaActionPerformed
 
     private void txtDescricaoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescricaoKeyPressed
-        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
-                   String nome = txtDescricao.getText();
-       Clientes obj = new Clientes();
-       ClientesDAO dao = new ClientesDAO();
+       if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+       String nome = txtDescricao.getText();
+       Produtos obj = new Produtos();
+       ProdutosDAO dao = new ProdutosDAO();
+       Fornecedores f = new Fornecedores();
+       FornecedoresDAO daof = new FornecedoresDAO();
        
-       obj = dao.BuscarCliente(nome);
-       if(obj.getNome() != null ){
+       obj = dao.BuscarProdutos(nome);
+       if(obj.getDescricao()!= null ){
            txtCodigo.setText(String.valueOf(obj.getId()));
-           txtDescricao.setText(obj.getNome());
-           txtPreco.setText(obj.getEmail());
-           txtStock.setText(String.valueOf(obj.getNumero()));
-           cbFornecedor.setSelectedItem(obj.getPais());
+           txtDescricao.setText(obj.getDescricao());
+           txtPreco.setText(String.valueOf(obj.getPreco()));
+           txtStock.setText(String.valueOf(obj.getStock()));
+           
+           f = daof.BuscarFornecedores(obj.getFornecedor().getNome());
+           cbFornecedor.getModel().setSelectedItem(f);
        }else{
-           JOptionPane.showMessageDialog(null,"Cliente não encontrado!");
+           JOptionPane.showMessageDialog(null,"Produto não encontrado!");
        }
             
         }

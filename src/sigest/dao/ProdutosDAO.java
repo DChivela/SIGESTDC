@@ -84,37 +84,59 @@ public class ProdutosDAO {
           }
       }
    
-   public Clientes BuscarCliente(String nome){
+   public Produtos BuscarProdutos(String nome){
        try {
-           String sql = "select * from tb_clientes where nome =?";
-           PreparedStatement stmt = conn.prepareStatement(sql);
-           stmt.setString(1, nome);
-           ResultSet rs = stmt.executeQuery();
-           Clientes obj = new Clientes();
-           if(rs.next()){
-               obj.setId(rs.getInt("id"));
-               obj.setNome(rs.getString("Nome"));
-               obj.setBi(rs.getString("Bi"));
-               obj.setNif(rs.getString("Nif"));
-               obj.setEmail(rs.getString("Email"));
-               obj.setTelefone(rs.getString("Telefone"));
-               obj.setTelefone2(rs.getString("Telefone2"));
-               obj.setCodPostal(rs.getString("codPostal"));
-               obj.setProvincia(rs.getString("Provincia"));
-               obj.setNumero(rs.getInt("numero"));
-               obj.setComplemento(rs.getString("Complemento"));
-               obj.setBairro(rs.getString("Bairro"));
-               obj.setCidade(rs.getString("Cidade"));
-               obj.setPais(rs.getString("Pais"));  
-           }//Fechamento do preechimento automático
-           return obj; //Retornar o objecto Cliente após a busca
+           String sql = "Select p.id, p.descricao, p.preco, p.qtd_stock, f.nome from tb_Produtos as p inner join"
+                   + " tb_fornecedores as f on(p.for_id=f.id) where p.descricao = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, nome);
+            ResultSet rs = stmt.executeQuery();
+            Produtos obj = new Produtos();
+            Fornecedores f = new Fornecedores();
+            if(rs.next()){
+                obj.setId(rs.getInt("p.id"));
+                obj.setDescricao(rs.getString("p.descricao"));
+                obj.setPreco(rs.getDouble("p.preco"));
+                obj.setStock(rs.getInt("p.Qtd_Stock"));
+                
+                f.setNome(rs.getString("f.nome"));
+                obj.setFornecedor(f);
+            }   
+            return obj;
            
        } catch (SQLException erro) { //Caso alguma coisa deia errado
-           JOptionPane.showMessageDialog(null, "Erro ao buscar o cliente"+ erro);
+           JOptionPane.showMessageDialog(null, "Erro ao buscar o produto"+ erro);
        }
        return null;
     }
-   //Método para listar os clientes do Banco
+   
+   public Produtos BuscarProdutosCodigo(int id){
+       try {
+           String sql = "Select p.id, p.descricao, p.preco, p.qtd_stock, f.nome from tb_Produtos as p inner join"
+                   + " tb_fornecedores as f on(p.for_id=f.id) where p.id = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            Produtos obj = new Produtos();
+            Fornecedores f = new Fornecedores();
+            if(rs.next()){
+                obj.setId(rs.getInt("p.id"));
+                obj.setDescricao(rs.getString("p.descricao"));
+                obj.setPreco(rs.getDouble("p.preco"));
+                obj.setStock(rs.getInt("p.Qtd_Stock"));
+                
+                f.setNome(rs.getString("f.nome"));
+                obj.setFornecedor(f);
+            }   
+            return obj;
+           
+       } catch (SQLException erro) { //Caso alguma coisa deia errado
+           JOptionPane.showMessageDialog(null, "Erro ao buscar o produto"+ erro);
+       }
+       return null;
+    }
+   
+   //Método para listar os produtos  do Banco de Dados
    public List<Produtos>Listar(){
        List<Produtos> lista = new ArrayList<>();
        try {

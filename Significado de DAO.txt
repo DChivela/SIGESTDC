@@ -1,0 +1,1 @@
+Em Java, DAO significa Data Access Object (Objeto de Acesso a Dados). É um padrão de design que visa abstrair e encapsular o acesso a um banco de dados ou outra fonte de dados. Isso significa que o DAO fornece uma interface simples e consistente para interagir com os dados, independentemente dos detalhes específicos da implementação do banco de dados.
