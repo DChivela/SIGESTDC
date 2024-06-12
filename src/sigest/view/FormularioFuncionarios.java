@@ -154,6 +154,7 @@ public class FormularioFuncionarios extends javax.swing.JFrame {
             }
         });
 
+        btnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Pesquisar_4.png"))); // NOI18N
         btnPesquisar.setText("Pesquisar");
         btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -427,6 +428,7 @@ public class FormularioFuncionarios extends javax.swing.JFrame {
 
         jLabel15.setText("Nome");
 
+        btnPesquisaNome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Pesquisar_4.png"))); // NOI18N
         btnPesquisaNome.setText("Pesquisar");
         btnPesquisaNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -460,7 +462,7 @@ public class FormularioFuncionarios extends javax.swing.JFrame {
                 .addComponent(txtPesquisaNome, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addComponent(btnPesquisaNome)
-                .addContainerGap(618, Short.MAX_VALUE))
+                .addContainerGap(598, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
@@ -480,7 +482,7 @@ public class FormularioFuncionarios extends javax.swing.JFrame {
 
         Painel_Guias.addTab("Consultar Funcionários", jPanel3);
 
-        btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/add1.png"))); // NOI18N
+        btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Novo_2.png"))); // NOI18N
         btnNovo.setText("NOVO");
         btnNovo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -488,7 +490,7 @@ public class FormularioFuncionarios extends javax.swing.JFrame {
             }
         });
 
-        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/salvar.png"))); // NOI18N
+        btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Save_1.png"))); // NOI18N
         btnSalvar.setText("SALVAR");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -496,7 +498,7 @@ public class FormularioFuncionarios extends javax.swing.JFrame {
             }
         });
 
-        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/editar.png"))); // NOI18N
+        btnEditar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Edite_2.png"))); // NOI18N
         btnEditar.setText("EDITAR");
         btnEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -512,7 +514,7 @@ public class FormularioFuncionarios extends javax.swing.JFrame {
             }
         });
 
-        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/printer.png"))); // NOI18N
+        btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Printer_2.png"))); // NOI18N
         btnImprimir.setText("IMPRIMIR");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

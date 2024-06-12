@@ -1,0 +1,1 @@
+Devido o campo NIF que permite valores nulos, provoca um bug no acto da verificação do pagamento da venda, pois o sistema vai verificar se existe um NIF com valor nulo e se existir ele vai agir de forma normal. No entanto, o melhor a fazer é evitar que se insiram dados nulos naquele campo (NIF) e não menos importante o nome do Cliente.

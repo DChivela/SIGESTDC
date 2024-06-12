@@ -1,0 +1,13 @@
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            String Nif = txtNif.getText();
+
+            ClientesDAO dao = new ClientesDAO();
+
+            obj = dao.BuscarClienteNIF(Nif);
+            if(obj.getNif() != null ){
+                txtNome.setText(obj.getNome());
+            }else{
+                JOptionPane.showMessageDialog(null,"NIF inválido!");
+            }
+
+        }
