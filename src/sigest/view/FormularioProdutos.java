@@ -22,7 +22,7 @@ import sigest.utilitarios.Utilitarios;
  *
  * @author domin
  */
-public class FormularioProdutos extends javax.swing.JFrame {
+public class FormularioProdutos extends javax.swing.JDialog{
 
     /**
      * Creates new form FormularioClientes
@@ -43,7 +43,7 @@ public class FormularioProdutos extends javax.swing.JFrame {
             });
         }
     }
-    public FormularioProdutos() {
+    public FormularioProdutos(java.awt.Frame parent, boolean modal) {
         initComponents();
     }
 
@@ -614,7 +614,7 @@ public class FormularioProdutos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormularioProdutos().setVisible(true);
+//                new FormularioProdutos().setVisible(true);
             }
         });
     }

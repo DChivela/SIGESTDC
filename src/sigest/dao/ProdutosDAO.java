@@ -211,7 +211,7 @@ public class ProdutosDAO {
               stmt.setInt(2, id);
               stmt.execute();
               stmt.close();
-              JOptionPane.showMessageDialog(null, "Baixa no stock efectuada com sucesso!");
+//              JOptionPane.showMessageDialog(null, "Baixa no stock efectuada com sucesso!");
             }catch (Exception e) {
               JOptionPane.showMessageDialog(null, "Erro na baixa do stock");
             }

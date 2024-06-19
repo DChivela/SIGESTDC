@@ -8,6 +8,7 @@ package sigest.view;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +19,8 @@ public class AreaTrabalho extends javax.swing.JFrame {
     /**
      * Creates new form AreaTrabalho
      */
+    
+    public String userLogado;    
     public AreaTrabalho() {
         initComponents();
     }
@@ -38,16 +41,19 @@ public class AreaTrabalho extends javax.swing.JFrame {
                 d.drawImage(image,0,0,getWidth(),getHeight(),this);
             }
         };
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblLogado = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        FichaFuncionarios = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        FichaFornecedores = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        MenuStock = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
@@ -67,15 +73,47 @@ public class AreaTrabalho extends javax.swing.JFrame {
             }
         });
 
+        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Utilizador:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Cambria", 0, 12))); // NOI18N
+
+        jLabel1.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
+        jLabel1.setText("Nome:");
+
+        lblLogado.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        lblLogado.setText("Domingos Chivela");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblLogado)
+                .addGap(0, 525, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLogado)
+                    .addComponent(jLabel1))
+                .addGap(0, 10, Short.MAX_VALUE))
+        );
+
+        painelDesktop.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
         javax.swing.GroupLayout painelDesktopLayout = new javax.swing.GroupLayout(painelDesktop);
         painelDesktop.setLayout(painelDesktopLayout);
         painelDesktopLayout.setHorizontalGroup(
             painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 675, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         painelDesktopLayout.setVerticalGroup(
             painelDesktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 266, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDesktopLayout.createSequentialGroup()
+                .addGap(0, 217, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Cliente.png"))); // NOI18N
@@ -95,28 +133,28 @@ public class AreaTrabalho extends javax.swing.JFrame {
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Funcionario.png"))); // NOI18N
         jMenu2.setText("Funcionários");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Formulário de Funcionários");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        FichaFuncionarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
+        FichaFuncionarios.setText("Formulário de Funcionários");
+        FichaFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                FichaFuncionariosActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem2);
+        jMenu2.add(FichaFuncionarios);
 
         jMenuBar1.add(jMenu2);
 
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Fornecedor (2).png"))); // NOI18N
         jMenu3.setText("Fornecedores");
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Formulário de Fornecedores");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        FichaFornecedores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        FichaFornecedores.setText("Formulário de Fornecedores");
+        FichaFornecedores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                FichaFornecedoresActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem3);
+        jMenu3.add(FichaFornecedores);
 
         jMenuBar1.add(jMenu3);
 
@@ -125,14 +163,14 @@ public class AreaTrabalho extends javax.swing.JFrame {
 
         jMenu8.setText("Meus Produtos");
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setText("Controle de Stock");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        MenuStock.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        MenuStock.setText("Controle de Stock");
+        MenuStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                MenuStockActionPerformed(evt);
             }
         });
-        jMenu8.add(jMenuItem4);
+        jMenu8.add(MenuStock);
 
         jMenuItem5.setText("Consulta Produtos");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
@@ -182,6 +220,11 @@ public class AreaTrabalho extends javax.swing.JFrame {
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem9.setText("Trocar Usuário");
+        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem9ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem9);
 
         jMenuBar1.add(jMenu6);
@@ -191,6 +234,11 @@ public class AreaTrabalho extends javax.swing.JFrame {
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_MASK));
         jMenuItem10.setText("Sair do Sistema");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu7.add(jMenuItem10);
 
         jMenuBar1.add(jMenu7);
@@ -212,44 +260,66 @@ public class AreaTrabalho extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        FormularioClientes fc = new FormularioClientes();
+        FormularioClientes fc = new FormularioClientes(this,true);
+        fc.setModal(rootPaneCheckingEnabled); //Para verificar se a janela está ou não habilitada
         fc.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         FormularioVendas fv = new FormularioVendas();
+//        fv.setModal(rootPaneCheckingEnabled);
         fv.setVisible(true);
     }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         this.setExtendedState(this.MAXIMIZED_BOTH);
+        lblLogado.setText(userLogado);
     }//GEN-LAST:event_formWindowActivated
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        FormularioFuncionarios ff = new FormularioFuncionarios();
+    private void FichaFuncionariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FichaFuncionariosActionPerformed
+        FormularioFuncionarios ff = new FormularioFuncionarios(this, true);
+        ff.setModal(rootPaneCheckingEnabled);
         ff.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_FichaFuncionariosActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        FormularioFornecedores fr = new FormularioFornecedores();
+    private void FichaFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FichaFornecedoresActionPerformed
+        FormularioFornecedores fr = new FormularioFornecedores(this, true);
+        fr.setModal(rootPaneCheckingEnabled);
         fr.setVisible(true);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_FichaFornecedoresActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        FormularioProdutos fp = new FormularioProdutos();
+        FormularioProdutos fp = new FormularioProdutos(this, true);
+        fp.setModal(rootPaneCheckingEnabled);
         fp.setVisible(true);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        FormularioProdutos ConsultaProdutos = new FormularioProdutos();
+        FormularioProdutos ConsultaProdutos = new FormularioProdutos(this, true);
+        ConsultaProdutos.setModal(rootPaneCheckingEnabled);
         ConsultaProdutos.Painel_Guias.setSelectedIndex(1);
         ConsultaProdutos.setVisible(true);
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        FormularioStock fs = new FormularioStock();
+    private void MenuStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuStockActionPerformed
+        FormularioStock fs = new FormularioStock(this,true);
+        fs.setModal(rootPaneCheckingEnabled);
         fs.setVisible(true);
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_MenuStockActionPerformed
+
+    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+        FormularioLogin login = new FormularioLogin();
+        this.dispose();
+        login.setVisible(true);
+    }//GEN-LAST:event_jMenuItem9ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        int janela = JOptionPane.showConfirmDialog(null, "Deseja realmente sair do sistema?");
+        if(janela==0){
+            System.exit(0);
+        }else if(janela==2)
+            JOptionPane.showMessageDialog(null, "Cancelando...");
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,6 +357,10 @@ public class AreaTrabalho extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JMenuItem FichaFornecedores;
+    public javax.swing.JMenuItem FichaFuncionarios;
+    public javax.swing.JMenuItem MenuStock;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -299,14 +373,13 @@ public class AreaTrabalho extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblLogado;
     private javax.swing.JDesktopPane painelDesktop;
     // End of variables declaration//GEN-END:variables
 }

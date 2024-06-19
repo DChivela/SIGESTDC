@@ -225,7 +225,7 @@ public class FormularioPagamentos extends javax.swing.JFrame {
             VendasDAO vd = new VendasDAO(); //Chamando a classe VendasDAO.
             vd.Salvar(v); //Método para salvar a venda.
             v.setId(vd.retornaUltimoIDVenda()); //Método para retornar a última venda.
-            JOptionPane.showMessageDialog(null, "ID da última venda!"+v.getId()); //Método para testar o retorno da última venda.
+//            JOptionPane.showMessageDialog(null, "ID da última venda!"+v.getId()); //Método para testar o retorno da última venda.
             
             //Salvando os itens do carrinho no formulário das vendas.
             for(int i=0; i<meusProdutos.getRowCount(); i++){
@@ -243,7 +243,10 @@ public class FormularioPagamentos extends javax.swing.JFrame {
                 qtdActualizada = qtdStock - qtdComprada; //Subtrai da quantdade existente.
                 pd.baixarStock(p.getId(), qtdActualizada); //Recebe a quantdade actualizada.
                 ItensVendasDAO ivd = new ItensVendasDAO();
-                ivd.Salvar(item); //Salvar o item   
+                ivd.Salvar(item); //Salvar o item  
+                dispose();
+                FormularioVendas fv = new FormularioVendas();
+                fv.setVisible(true);
             }
         }else{
             JOptionPane.showMessageDialog(null, "Não foi possível fazer a venda!\n O valor pago é menor que o valor da venda.");

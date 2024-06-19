@@ -668,7 +668,7 @@ public class FormularioVendas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormularioVendas().setVisible(true);
+               new FormularioVendas().setVisible(true);
             }
         });
     }
