@@ -83,26 +83,34 @@ public class FormularioPagamentos extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Numerário");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Cartão");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Cheque");
 
         jLabel5.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         jLabel5.setText("Total");
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Observações:");
 
+        txtNumerario.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         txtNumerario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        txtCartao.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         txtCartao.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
+        txtCheque.setFont(new java.awt.Font("Cambria Math", 0, 12)); // NOI18N
         txtCheque.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         txtTotalVenda.setFont(new java.awt.Font("Cambria Math", 1, 14)); // NOI18N
         txtTotalVenda.setEnabled(false);
 
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("Troco");
 
         txtTroco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -113,6 +121,7 @@ public class FormularioPagamentos extends javax.swing.JFrame {
         txtObservacoes.setRows(5);
         jScrollPane1.setViewportView(txtObservacoes);
 
+        btnPagar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnPagar.setText("PAGAR");
         btnPagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

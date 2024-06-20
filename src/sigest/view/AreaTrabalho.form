@@ -181,8 +181,10 @@
                   <KeyStroke key="F11"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Hist&#xf3;rico Vendas"/>
-                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem8ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
