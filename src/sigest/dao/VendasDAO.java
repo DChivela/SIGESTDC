@@ -8,8 +8,12 @@ package sigest.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import sigest.jdbc.ConexaoBanco;
+import sigest.model.Clientes;
 import sigest.model.Vendas;
 
 /**
@@ -54,6 +58,35 @@ public int retornaUltimoIDVenda(){
         return ultimoID;
     } catch (Exception e) {
         throw new RuntimeException("Erro ao retornar o último ID da venda!"+e);
+    }
+}
+
+public List<Vendas>historicoVendas(LocalDate dataInicial, LocalDate dataFinal){
+    try {
+        List<Vendas>lista = new ArrayList<>();
+        String sql = "Select v.ID, c.nome, date_format(v.data_venda, '%d/%m/Y')"
+                + "as data_formatada, v.total_venda, v.observacoes from tb_vendas as v inner join"
+                + " tb_clientes as c on (v.Cliente_ID=c.ID)"
+                + " WHERE v.data_venda between ? and ?"; //O BETWEEN serve para selecionar valores em uma coluna dentro de um intervalo
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, dataInicial.toString());
+        stmt.setString(2, dataFinal.toString());
+        ResultSet rs = stmt.executeQuery();
+        while(rs.next()){
+            Vendas v = new Vendas();
+            Clientes c = new Clientes();
+            v.setId(rs.getInt("v.id"));
+            c.setNome(rs.getString("c.nome"));
+            v.setClientes(c);
+            v.setData_venda(rs.getString("data_formatada"));
+            v.setTotal_venda(rs.getDouble("v.total_venda"));
+            v.setObservacoes(rs.getString("v.observacoes"));
+            lista.add(v);
+            
+        }
+        return lista;
+    } catch (Exception e) {
+        throw new RuntimeException("Erro ao criar o histórico de vendas!"+e);
     }
 }
 

@@ -5,6 +5,13 @@
  */
 package sigest.view;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import sigest.dao.VendasDAO;
+import sigest.model.Vendas;
+
 /**
  *
  * @author domin
@@ -36,9 +43,10 @@ public class FormularioHistorico extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnPesquisarVenda = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabela = new javax.swing.JTable();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Histórico de Vendas");
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 102));
 
@@ -65,13 +73,13 @@ public class FormularioHistorico extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Consulta por data", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Cambria", 1, 12))); // NOI18N
 
         try {
-            txtDataInicial.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDataInicial.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/20##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
 
         try {
-            txtDataFinal.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            txtDataFinal.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/20##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -81,6 +89,11 @@ public class FormularioHistorico extends javax.swing.JFrame {
         jLabel3.setText("Data Final");
 
         btnPesquisarVenda.setText("Pesquisar");
+        btnPesquisarVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisarVendaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -115,7 +128,7 @@ public class FormularioHistorico extends javax.swing.JFrame {
                 .addContainerGap(44, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -123,7 +136,7 @@ public class FormularioHistorico extends javax.swing.JFrame {
                 "Código", "Cliente", "Data Venda", "Total Venda", "Observações"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabela);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,6 +171,26 @@ public class FormularioHistorico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnPesquisarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarVendaActionPerformed
+        DateTimeFormatter formato =DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate dataInicial = LocalDate.parse(txtDataInicial.getText(), formato);
+        LocalDate dataFinal = LocalDate.parse(txtDataFinal.getText(), formato);
+        VendasDAO vd = new VendasDAO();
+        List<Vendas>lista = vd.historicoVendas(dataInicial, dataFinal);
+        DefaultTableModel historico = (DefaultTableModel) tabela.getModel();
+        historico.setNumRows(0);
+        for(Vendas v : lista){
+            historico.addRow(new Object[]{
+            v.getId(),
+            v.getClientes().getNome(),
+            v.getData_venda(),
+            v.getTotal_venda(),
+            v.getObservacoes()
+        });
+        }
+        
+    }//GEN-LAST:event_btnPesquisarVendaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -169,7 +202,7 @@ public class FormularioHistorico extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -201,7 +234,7 @@ public class FormularioHistorico extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tabela;
     private javax.swing.JFormattedTextField txtDataFinal;
     private javax.swing.JFormattedTextField txtDataInicial;
     // End of variables declaration//GEN-END:variables
