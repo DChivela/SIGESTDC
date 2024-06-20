@@ -47,6 +47,7 @@ public class FormularioHistorico extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Histórico de Vendas");
+        setBackground(new java.awt.Color(0, 51, 102));
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 102));
 
@@ -136,6 +137,11 @@ public class FormularioHistorico extends javax.swing.JFrame {
                 "Código", "Cliente", "Data Venda", "Total Venda", "Observações"
             }
         ));
+        tabela.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabela);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -159,37 +165,49 @@ public class FormularioHistorico extends javax.swing.JFrame {
                 .addGap(121, 121, 121)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(10, 10, 10)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(287, Short.MAX_VALUE)))
+                    .addContainerGap(333, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPesquisarVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarVendaActionPerformed
-        DateTimeFormatter formato =DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate dataInicial = LocalDate.parse(txtDataInicial.getText(), formato);
         LocalDate dataFinal = LocalDate.parse(txtDataFinal.getText(), formato);
         VendasDAO vd = new VendasDAO();
-        List<Vendas>lista = vd.historicoVendas(dataInicial, dataFinal);
+        List<Vendas> lista = vd.historicoVendas(dataInicial, dataFinal);
         DefaultTableModel historico = (DefaultTableModel) tabela.getModel();
         historico.setNumRows(0);
-        for(Vendas v : lista){
+        for (Vendas v : lista) {
             historico.addRow(new Object[]{
-            v.getId(),
-            v.getClientes().getNome(),
-            v.getData_venda(),
-            v.getTotal_venda(),
-            v.getObservacoes()
-        });
+                v.getId(),
+                v.getClientes().getNome(),
+                v.getData_venda(),
+                v.getTotal_venda(),
+                v.getObservacoes()
+            });
         }
-        
+
     }//GEN-LAST:event_btnPesquisarVendaActionPerformed
+
+    private void tabelaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaMouseClicked
+        FormularioDetalheVenda fdv = new FormularioDetalheVenda();
+        //Código para pegar as informações da tabela para oc campos do formulário
+        fdv.txtIdVenda.setText(tabela.getValueAt(tabela.getSelectedRow(), 0).toString());
+        fdv.txtCliente.setText(tabela.getValueAt(tabela.getSelectedRow(), 1).toString());
+        fdv.txtDataVenda.setText(tabela.getValueAt(tabela.getSelectedRow(), 2).toString());
+        fdv.txtTotalVenda.setText(tabela.getValueAt(tabela.getSelectedRow(), 3).toString());
+        fdv.txtObservacoes.setText(tabela.getValueAt(tabela.getSelectedRow(), 4).toString());
+        fdv.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_tabelaMouseClicked
 
     /**
      * @param args the command line arguments

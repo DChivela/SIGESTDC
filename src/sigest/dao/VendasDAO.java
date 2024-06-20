@@ -64,7 +64,7 @@ public int retornaUltimoIDVenda(){
 public List<Vendas>historicoVendas(LocalDate dataInicial, LocalDate dataFinal){
     try {
         List<Vendas>lista = new ArrayList<>();
-        String sql = "Select v.ID, c.nome, date_format(v.data_venda, '%d/%m/Y')"
+        String sql = "Select v.ID, c.nome, date_format(v.data_venda, '%d/%m/%Y')"
                 + "as data_formatada, v.total_venda, v.observacoes from tb_vendas as v inner join"
                 + " tb_clientes as c on (v.Cliente_ID=c.ID)"
                 + " WHERE v.data_venda between ? and ?"; //O BETWEEN serve para selecionar valores em uma coluna dentro de um intervalo
