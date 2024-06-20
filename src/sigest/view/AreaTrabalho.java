@@ -34,7 +34,7 @@ public class AreaTrabalho extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ImageIcon icon = new ImageIcon(getClass().getResource("/imgFundo/FundoAzulTapiz.png"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("/imgFundo/Imagem4.jpg"));
         Image image = icon.getImage();
         painelDesktop = new javax.swing.JDesktopPane(){
             public void paintComponent(Graphics d){
@@ -120,6 +120,7 @@ public class AreaTrabalho extends javax.swing.JFrame {
         jMenu1.setText("Clientes");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Cliente 5.png"))); // NOI18N
         jMenuItem1.setText("Formulário de Clientes");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,10 +131,11 @@ public class AreaTrabalho extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Funcionario.png"))); // NOI18N
+        jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Formulário.png"))); // NOI18N
         jMenu2.setText("Funcionários");
 
         FichaFuncionarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
+        FichaFuncionarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Cliente 4.png"))); // NOI18N
         FichaFuncionarios.setText("Formulário de Funcionários");
         FichaFuncionarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -144,10 +146,11 @@ public class AreaTrabalho extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Fornecedor (2).png"))); // NOI18N
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Documentation 2.png"))); // NOI18N
         jMenu3.setText("Fornecedores");
 
         FichaFornecedores.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_MASK));
+        FichaFornecedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Documentation.png"))); // NOI18N
         FichaFornecedores.setText("Formulário de Fornecedores");
         FichaFornecedores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -158,12 +161,14 @@ public class AreaTrabalho extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Producto.png"))); // NOI18N
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Producto_2.png"))); // NOI18N
         jMenu4.setText("Produtos");
 
+        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Category3.png"))); // NOI18N
         jMenu8.setText("Meus Produtos");
 
         MenuStock.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
+        MenuStock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/CarrinhoCaixa.png"))); // NOI18N
         MenuStock.setText("Controle de Stock");
         MenuStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,6 +177,7 @@ public class AreaTrabalho extends javax.swing.JFrame {
         });
         jMenu8.add(MenuStock);
 
+        jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/SeachBox.png"))); // NOI18N
         jMenuItem5.setText("Consulta Produtos");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,6 +187,7 @@ public class AreaTrabalho extends javax.swing.JFrame {
         jMenu8.add(jMenuItem5);
 
         jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Checklis.png"))); // NOI18N
         jMenuItem11.setText("Formulário Produtos");
         jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,10 +200,11 @@ public class AreaTrabalho extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu4);
 
-        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Sales.png"))); // NOI18N
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Sales 2.png"))); // NOI18N
         jMenu5.setText("Vendas");
 
         jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, 0));
+        jMenuItem6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/POS.png"))); // NOI18N
         jMenuItem6.setText("Abir POS");
         jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,10 +215,12 @@ public class AreaTrabalho extends javax.swing.JFrame {
 
         jMenuItem7.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F12, 0));
         jMenuItem7.setText("Caixa");
+        jMenuItem7.setEnabled(false);
         jMenu5.add(jMenuItem7);
 
         jMenuItem8.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F11, 0));
         jMenuItem8.setText("Histórico Vendas");
+        jMenuItem8.setEnabled(false);
         jMenu5.add(jMenuItem8);
 
         jMenuBar1.add(jMenu5);
@@ -219,6 +229,7 @@ public class AreaTrabalho extends javax.swing.JFrame {
         jMenu6.setText("Configurações");
 
         jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Trocar 1.png"))); // NOI18N
         jMenuItem9.setText("Trocar Usuário");
         jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

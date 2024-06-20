@@ -97,6 +97,7 @@ int idProduto, qtdActualizada;
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Stock");
 
+        Painel_Guias.setBackground(new java.awt.Color(51, 51, 51));
         Painel_Guias.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Consulta de Produtos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
         txtStock_Actual.addActionListener(new java.awt.event.ActionListener() {
@@ -258,7 +259,7 @@ int idProduto, qtdActualizada;
         btnImprimir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Printer_2.png"))); // NOI18N
         btnImprimir.setText("IMPRIMIR");
 
-        jPanel2.setBackground(new java.awt.Color(0, 51, 102));
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Produtos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
         tabela.setModel(new javax.swing.table.DefaultTableModel(

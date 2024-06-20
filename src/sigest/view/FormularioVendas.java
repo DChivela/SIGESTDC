@@ -382,6 +382,11 @@ public class FormularioVendas extends javax.swing.JFrame {
 
         btnCancelar.setFont(new java.awt.Font("Cambria", 1, 13)); // NOI18N
         btnCancelar.setText("CANCELAR");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout TotalVendaLayout = new javax.swing.GroupLayout(TotalVenda);
         TotalVenda.setLayout(TotalVendaLayout);
@@ -538,7 +543,7 @@ public class FormularioVendas extends javax.swing.JFrame {
                 txtStock.setText(String.valueOf(obj.getStock()));
                 txtCodigo.setEnabled(false);
             } else {
-                JOptionPane.showMessageDialog(null, "Código inválidoo!");
+                JOptionPane.showMessageDialog(null, "Código inválido!");
             }
 
         }
@@ -637,6 +642,10 @@ public class FormularioVendas extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Por favor verifique se todos os campos \n encontram-se devidamente preenchidos! \n Verifique os campos Nome e/ou NIF.");
         }
     }//GEN-LAST:event_btnPagamentoActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments

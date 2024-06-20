@@ -17,6 +17,9 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+C"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/sigest/imagens/Cliente 5.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Formul&#xe1;rio de Clientes"/>
               </Properties>
               <Events>
@@ -28,7 +31,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sigest/imagens/Funcionario.png"/>
+              <Image iconType="3" name="/sigest/imagens/Formul&#xe1;rio.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Funcion&#xe1;rios"/>
           </Properties>
@@ -37,6 +40,9 @@
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+F"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/sigest/imagens/Cliente 4.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Formul&#xe1;rio de Funcion&#xe1;rios"/>
               </Properties>
@@ -52,7 +58,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sigest/imagens/Fornecedor (2).png"/>
+              <Image iconType="3" name="/sigest/imagens/Documentation 2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Fornecedores"/>
           </Properties>
@@ -61,6 +67,9 @@
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+D"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/sigest/imagens/Documentation.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Formul&#xe1;rio de Fornecedores"/>
               </Properties>
@@ -76,13 +85,16 @@
         <Menu class="javax.swing.JMenu" name="jMenu4">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sigest/imagens/Producto.png"/>
+              <Image iconType="3" name="/sigest/imagens/Producto_2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Produtos"/>
           </Properties>
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="jMenu8">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/sigest/imagens/Category3.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Meus Produtos"/>
               </Properties>
               <SubComponents>
@@ -90,6 +102,9 @@
                   <Properties>
                     <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                       <KeyStroke key="Ctrl+S"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/sigest/imagens/CarrinhoCaixa.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Controle de Stock"/>
                   </Properties>
@@ -102,6 +117,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItem5">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/sigest/imagens/SeachBox.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Consulta Produtos"/>
                   </Properties>
                   <Events>
@@ -112,6 +130,9 @@
                   <Properties>
                     <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                       <KeyStroke key="Ctrl+P"/>
+                    </Property>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/sigest/imagens/Checklis.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Formul&#xe1;rio Produtos"/>
                   </Properties>
@@ -126,7 +147,7 @@
         <Menu class="javax.swing.JMenu" name="jMenu5">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/sigest/imagens/Sales.png"/>
+              <Image iconType="3" name="/sigest/imagens/Sales 2.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Vendas"/>
           </Properties>
@@ -135,6 +156,9 @@
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="F4"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/sigest/imagens/POS.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Abir POS"/>
               </Properties>
@@ -148,6 +172,7 @@
                   <KeyStroke key="F12"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Caixa"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
@@ -156,6 +181,7 @@
                   <KeyStroke key="F11"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Hist&#xf3;rico Vendas"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
           </SubComponents>
@@ -172,6 +198,9 @@
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+W"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/sigest/imagens/Trocar 1.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Trocar Usu&#xe1;rio"/>
               </Properties>
@@ -245,7 +274,7 @@
     <Container class="javax.swing.JDesktopPane" name="painelDesktop">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane(){&#xa;    public void paintComponent(Graphics d){&#xa;        d.drawImage(image,0,0,getWidth(),getHeight(),this);&#xa;    }&#xa;}"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(getClass().getResource(&quot;/imgFundo/FundoAzulTapiz.png&quot;));&#xa;Image image = icon.getImage();"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icon = new ImageIcon(getClass().getResource(&quot;/imgFundo/Imagem4.jpg&quot;));&#xa;Image image = icon.getImage();"/>
       </AuxValues>
 
       <Layout>
