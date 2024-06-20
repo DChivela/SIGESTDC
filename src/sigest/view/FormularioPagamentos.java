@@ -109,6 +109,7 @@ public class FormularioPagamentos extends javax.swing.JFrame {
         txtTroco.setEnabled(false);
 
         txtObservacoes.setColumns(20);
+        txtObservacoes.setFont(new java.awt.Font("Cambria", 0, 13)); // NOI18N
         txtObservacoes.setRows(5);
         jScrollPane1.setViewportView(txtObservacoes);
 

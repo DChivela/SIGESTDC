@@ -240,10 +240,11 @@ public class AreaTrabalho extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu6);
 
-        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Exit_2.png"))); // NOI18N
+        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Exit 4.png"))); // NOI18N
         jMenu7.setText("Sair");
 
         jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, java.awt.event.InputEvent.ALT_MASK));
+        jMenuItem10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/sigest/imagens/Close.png"))); // NOI18N
         jMenuItem10.setText("Sair do Sistema");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
