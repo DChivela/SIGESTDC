@@ -78,7 +78,7 @@ public class FormularioDetalheVenda extends javax.swing.JFrame {
 
         jLabel5.setText("Total da venda");
 
-        jLabel6.setText("Observações");
+        jLabel6.setText("Observações:");
 
         txtIdVenda.setEnabled(false);
 
@@ -180,7 +180,7 @@ public class FormularioDetalheVenda extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Codigo", "Produto", "Qtd", "Preço", "Total"
+                "Codigo", "Produto", "Qtd", "Preço", "Subtotal"
             }
         ));
         Carrinho.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -261,7 +261,7 @@ public class FormularioDetalheVenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Carrinho;
+    public javax.swing.JTable Carrinho;
     private javax.swing.JButton btnImprimir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

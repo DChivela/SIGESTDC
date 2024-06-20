@@ -9,7 +9,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import sigest.dao.ItensVendasDAO;
 import sigest.dao.VendasDAO;
+import sigest.model.ItensVendas;
 import sigest.model.Vendas;
 
 /**
@@ -205,8 +207,22 @@ public class FormularioHistorico extends javax.swing.JFrame {
         fdv.txtDataVenda.setText(tabela.getValueAt(tabela.getSelectedRow(), 2).toString());
         fdv.txtTotalVenda.setText(tabela.getValueAt(tabela.getSelectedRow(), 3).toString());
         fdv.txtObservacoes.setText(tabela.getValueAt(tabela.getSelectedRow(), 4).toString());
+        int vendaID = Integer.valueOf(fdv.txtIdVenda.getText());
+        ItensVendasDAO dao = new ItensVendasDAO();
+        List<ItensVendas>lista = dao.listaItens(vendaID);
+        DefaultTableModel dados = (DefaultTableModel) fdv.Carrinho.getModel();
+        for(ItensVendas i : lista){
+            dados.addRow(new Object[]{
+            i.getProdutos().getId(),
+            i.getProdutos().getDescricao(),
+            i.getQtd(),
+            i.getProdutos().getPreco(),
+            i.getSubtotal()
+        });
+        }
+        
         fdv.setVisible(true);
-        dispose();
+//        dispose();
     }//GEN-LAST:event_tabelaMouseClicked
 
     /**

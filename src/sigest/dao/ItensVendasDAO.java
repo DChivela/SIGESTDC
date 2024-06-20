@@ -47,7 +47,7 @@ public class ItensVendasDAO {
         try {
             List<ItensVendas>lista = new ArrayList<>();
             String sql = "SELECT p.id, p.descricao, i.qtd, p.preco, i.subtotal FROM tb_ItensVendas AS i INNER JOIN"
-                    + " tb_produtos AS p ON (i.produto_id = p.id) WHERE i.venda_ID";
+                    + " tb_produtos AS p ON (i.produto_id = p.id) WHERE i.venda_ID =  ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, vendaID);
             ResultSet rs = stmt.executeQuery();
