@@ -61,6 +61,7 @@ public class FormularioPagamentos extends javax.swing.JFrame {
         btnPagar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("REGULARIZAÇÕES");
 
         jPanel1.setBackground(new java.awt.Color(0, 51, 102));
 

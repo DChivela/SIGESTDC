@@ -197,7 +197,7 @@ public class FormularioFuncionarios extends javax.swing.JDialog {
 
         jLabel8.setText("Província");
 
-        jLabel9.setText("Nº");
+        jLabel9.setText("Casa Nº");
 
         txtNumero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -346,8 +346,8 @@ public class FormularioFuncionarios extends javax.swing.JDialog {
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel17))
                                     .addGroup(painelDadosPessoaisLayout.createSequentialGroup()
-                                        .addGap(37, 37, 37)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(13, 13, 13)
+                                        .addComponent(jLabel9)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -474,9 +474,7 @@ public class FormularioFuncionarios extends javax.swing.JDialog {
                 .addGap(50, 50, 50)
                 .addComponent(btnPesquisaNome)
                 .addContainerGap(598, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jScrollPane1)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -830,10 +828,10 @@ public class FormularioFuncionarios extends javax.swing.JDialog {
         txtCodpostal.setText(tabela.getValueAt(tabela.getSelectedRow(), 10).toString());
         txtProvincia.setText(tabela.getValueAt(tabela.getSelectedRow(), 11).toString());
         txtNumero.setText(tabela.getValueAt(tabela.getSelectedRow(), 12).toString());
-        txtComplemento.setText(tabela.getValueAt(tabela.getSelectedRow(), 10).toString());
-        txtBairro.setText(tabela.getValueAt(tabela.getSelectedRow(), 13).toString());
-        txtCidade.setText(tabela.getValueAt(tabela.getSelectedRow(), 14).toString());
-        cbPais.setSelectedItem(tabela.getValueAt(tabela.getSelectedRow(), 15).toString());
+        txtComplemento.setText(tabela.getValueAt(tabela.getSelectedRow(), 13).toString());
+        txtBairro.setText(tabela.getValueAt(tabela.getSelectedRow(), 14).toString());
+        txtCidade.setText(tabela.getValueAt(tabela.getSelectedRow(), 15).toString());
+        cbPais.setSelectedItem(tabela.getValueAt(tabela.getSelectedRow(), 16).toString());
     }//GEN-LAST:event_tabelaMouseClicked
 
     private void txtPesquisaNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPesquisaNomeKeyPressed

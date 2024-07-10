@@ -90,6 +90,25 @@ public List<Vendas>historicoVendas(LocalDate dataInicial, LocalDate dataFinal){
     }
 }
 
+public double ResumoDia(LocalDate dataVenda){
+    try {
+        double totalDia = 0; //Valor inicial.
+        //Preparar a String baseando-se na data que estiver no nosso formulário.
+        String sql = "SELECT SUM(total_venda) as total from tb_vendas where data_venda=?";
+        //Pegando a conexão com o nosso banco de dados.
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, dataVenda.toString());
+        // Executar a nossa String preparada acima.
+        ResultSet rs = stmt.executeQuery();
+        
+        if(rs.next()){ //Condição 
+            totalDia = rs.getDouble("total" ); //Acima fizemos a alises para que o total_venda seja igual a total.
+        }
+        return totalDia;
+    } catch (Exception e) {
+        throw new RuntimeException("Erro ao retornar a posição do dia." +e);
+    } 
+}
 }
 
 
